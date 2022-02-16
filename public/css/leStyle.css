@@ -1,0 +1,55 @@
+body {
+    background-attachment: fixed;
+    font-family: 'Supermercado One', serif;
+    padding-left: 15px;
+}
+
+a {
+    color : inherit;
+}
+
+img {
+    max-width: 100%;
+}
+
+header img {
+    height: 70px;
+}
+
+.container {
+    background-color: #c1c6ff;
+    max-width: 1000px;
+    margin: auto;
+    padding: 5px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    padding-left: 5px;
+}
+
+nav li {
+    margin-right: 1em;
+}
+
+.list-idee a{
+    text-decoration: none;
+}
+.list-idee ul{
+    list-style: none;
+}
+.list-idee li{
+    padding: 5px;
+}
+
+form *{
+    display: block;
+    margin-bottom: 2px;
+    box-sizing: border-box;
+    width: 170px;
+}
+
+.inline {
+    color :red;
+}

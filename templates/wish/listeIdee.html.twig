@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Liste Idées
+{% endblock %}
+
+{% block body %}
+    <div class="list-idee">
+        <ul>
+            {% for wish in wishes %}
+                <li><a href="{{ path('wish_detail',{'idIdee' : wish.id}) }}">{{ wish.title }} <i>{{ wish.categorie.name}}</i></a></li>
+            {% endfor %}
+        </ul>
+        <button><a href="{{ path('wish_ajout') }}">Ajouter une idée</a></button>
+    </div>
+{% endblock %}
+

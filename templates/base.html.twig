@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=yes">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>{% block title %}TITRE PAR DEFAUT {% endblock %}</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Supermercado+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/leStyle.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/normalize.css') }}">
+
+    <link rel="icon" href="{{ asset('img/favicon.png') }}">
+
+</head>
+    <div class="container">
+    <header>
+        <h1><a href="{{ path('main_home') }}"><img src="{{ asset('img/logo.svg') }}" alt="Bucket-List">Bucket-List</a></h1>
+            {{ include('inc/navigation.html.twig') }}
+        {% if app.user %}
+            <h4>Connecté avec l'adresse {{ app.user.userIdentifier }}</h4>
+        {% endif %}
+    </header>
+
+        {# read and display all flash messages #}
+        {% for label, messages in app.flashes %}
+            {% for message in messages %}
+                <div class="flash flash-{{ label }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endfor %}
+
+    <body>
+        {% block body %} Message par défaut {% endblock %}
+    </body>
+
+    <footer>
+        {% block footer%}
+            <p>&copy;Bucket-List {{ "now" | date ("Y") }}</p>
+        {% endblock %}
+    </footer>
+    </div>
+</html>
